@@ -1,0 +1,75 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="assets/icono1.png" alt="Logo" class="logo-icon">
+    <img src="assets/letras.png" alt="Logo letras" class="logo-text">
+  </div>
+
+  <!-- Botón hamburguesa (solo en móviles) -->
+  <button 
+  (click)="toggleMenu()"
+  class="hamburger improved"
+  [class.active]="isOpen"
+  aria-label="Toggle menu"
+>
+  <span class="line line1"></span>
+  <span class="line line2"></span>
+  <span class="line line3"></span>
+</button>
+
+  <!-- Menú Desktop -->
+  <ul class="menu-desktop">
+    <li [class.active]="isActive('/home')">
+      <a routerLink="/home" (click)="closeMenu()">
+        <i class="pi pi-home"></i>
+        <span>Inicio</span>
+      </a>
+    </li>
+    <li [class.active]="isActive('/servicios')">
+      <a routerLink="/servicios" (click)="closeMenu()">
+        <i class="pi pi-cog"></i>
+        <span>Servicios</span>
+      </a>
+    </li>
+    <li [class.active]="isActive('/nosotros')">
+      <a routerLink="/nosotros" (click)="closeMenu()">
+        <i class="pi pi-briefcase"></i>
+        <span>Nosotros</span>
+      </a>
+    </li>
+    <li [class.active]="isActive('/contacto')">
+      <a routerLink="/contacto" (click)="closeMenu()">
+        <i class="pi pi-envelope"></i>
+        <span>Contacto</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Menú Móvil -->
+  <ul class="menu-mobile" [class.active]="isOpen">
+    <li [class.active]="isActive('/home')">
+      <a routerLink="/home" (click)="closeMenu()">
+        <i class="pi pi-home"></i>
+        <span>Inicio</span>
+      </a>
+    </li>
+    <li [class.active]="isActive('/servicios')">
+      <a routerLink="/servicios" (click)="closeMenu()">
+        <i class="pi pi-cog"></i>
+        <span>Servicios</span>
+      </a>
+    </li>
+    <li [class.active]="isActive('/nosotros')">
+      <a routerLink="/nosotros" (click)="closeMenu()">
+        <i class="pi pi-briefcase"></i>
+        <span>Nosotros</span>
+      </a>
+    </li>
+    <li [class.active]="isActive('/contacto')">
+      <a routerLink="/contacto" (click)="closeMenu()">
+        <i class="pi pi-envelope"></i>
+        <span>Contacto</span>
+      </a>
+    </li>
+  </ul>
+</nav>

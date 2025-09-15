@@ -1,0 +1,111 @@
+<!-- services.component.html -->
+<section class="services-page" id="services">
+  <div class="container">
+    <!-- Encabezado -->
+    <div class="services-header">
+      <h1>Nuestros Servicios</h1>
+      <p>Soluciones integrales para la gestión de residuos y excedentes industriales</p>
+    </div>
+
+    <!-- Grid de servicios - 2 cards por fila -->
+    <div class="services-grid">
+      @for (service of services; track service.id) {
+        <div class="service-card">
+          <div class="service-image">
+            <img [src]="service.image" [alt]="service.title">
+            <div class="service-overlay"></div>
+            <div class="service-icon">
+              <i class="fas fa-{{service.icon}}"></i>
+            </div>
+          </div>
+          <div class="service-content">
+            <h3>{{service.title}}</h3>
+            <p>{{service.description}}</p>
+            <button class="service-button" (click)="scrollToService(service.id + '-detail')">
+              Ver detalles
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Secciones detalladas para cada servicio -->
+    @for (service of services; track service.id) {
+      <div class="service-detail-section" [id]="service.id + '-detail'">
+        <div class="service-detail-header">
+          <h2>{{service.title}}</h2>
+          <p class="service-detail-subtitle">{{service.subtitle}}</p>
+        </div>
+
+        <div class="service-detail-content">
+          <div class="service-process">
+            <h3>PROCESO Y METODOLOGÍA</h3>
+            
+            @for (step of service.process; track step.title) {
+              <div class="process-step">
+                <h4>{{step.title}}</h4>
+                <p>{{step.description}}</p>
+              </div>
+            }
+          </div>
+
+          <div class="service-sidebar">
+            <div class="benefits-info">
+              <h3>BENEFICIOS</h3>
+              <ul>
+                @for (benefit of service.benefits; track benefit) {
+                  <li>{{benefit}}</li>
+                }
+              </ul>
+            </div>
+            
+            <div class="results-info">
+              <h3>RESULTADOS</h3>
+              <ul>
+                @for (result of service.results; track result) {
+                  <li>{{result}}</li>
+                }
+              </ul>
+            </div>
+
+            <!-- Específico para limpieza de tanques -->
+            @if (service.id === 'limpieza-tanques') {
+              <div class="safety-info">
+                <h3>SEGURIDAD</h3>
+                <ul>
+                  @for (benefit of service.benefits; track benefit) {
+                    <li>{{benefit}}</li>
+                  }
+                </ul>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 2rem;">
+          <button class="btn btn-secondary" (click)="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+            Volver al inicio
+          </button>
+        </div>
+      </div>
+    }
+
+    <!-- Sección de contacto -->
+    <div class="contact-section">
+      <h2>¿Necesita asesoramiento especializado?</h2>
+      <p>Nuestros expertos están disponibles para evaluar su situación y recomendar la solución más adecuada</p>
+      <div class="contact-buttons">
+        <button class="btn btn-primary">
+          <i class="fas fa-phone"></i>
+          Contactar ahora
+        </button>
+        <button class="btn btn-secondary">
+          <i class="fas fa-envelope"></i>
+          Solicitar cotización
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

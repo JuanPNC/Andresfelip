@@ -1,0 +1,217 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 0 1rem;
+  background-color: rgba(255, 255, 255, 0.842);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    height: 5rem;
+    
+    .logo-icon {
+      height: 70px;
+    }
+    
+    .logo-text {
+      height: 80px;
+    }
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+
+  .logo-icon {
+    height: 80px;
+    transition: height 0.3s ease;
+  }
+
+  .logo-text {
+    height: 90px;
+    transition: height 0.3s ease;
+  }
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 1001;
+  padding: 0;
+
+  span {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    display: block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 3px 0;
+    transform-origin: center;
+    position: relative;
+  }
+
+  // Estados de la animación mejorada
+  &:hover span {
+    background-color: #1a743c;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    
+    span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+/* Menú Desktop */
+.menu-desktop {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    height: 100%;
+
+    li {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+
+      // Solución al problema: aplicar hover y active al li, no al a
+      &:hover, &.active {
+        background-color: #1a743c;
+        border-bottom: #8abe53 6px solid;
+        
+        a {
+          color: white;
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: inherit;
+        height: 100%;
+        padding: 0 1.5rem;
+      }
+    }
+  }
+}
+
+/* Menú Móvil */
+.menu-mobile {
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+
+  &.active {
+    max-height: 300px;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  li {
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    list-style: none;
+    border-bottom: 1px solid #f0f0f0;
+
+    // Solución al problema: aplicar hover y active al li, no al a
+    &:hover, &.active {
+      background-color: #1a743c;
+      
+      a {
+        color: white;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: inherit;
+      padding: 1rem;
+      width: 100%;
+    }
+  }
+}
+
+// Asegurar que el contenido no quede detrás de la navbar
+:host {
+  display: block;
+  
+  ~ * {
+    padding-top: 6rem;
+    
+    @media (max-width: 768px) {
+      padding-top: 6rem;
+    }
+  }
+}
+
+.navbar.scrolled ~ * {
+  padding-top: 5rem;
+  
+  @media (max-width: 768px) {
+    padding-top: 5rem;
+  }
+}

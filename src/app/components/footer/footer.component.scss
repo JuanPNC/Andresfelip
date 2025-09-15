@@ -1,0 +1,48 @@
+.footer {
+  background-color: #0c4622; /* Verde base */
+  color: #fff;
+  padding: 2rem 1rem;
+}
+
+img {
+  height: 100px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-brand h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.footer-brand p {
+  margin: 0.3rem 0 1rem;
+  font-size: 0.9rem;
+  color: #dcdcdc;
+}
+
+.footer-links {
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #b2f2bb;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: #dcdcdc;
+}

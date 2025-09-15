@@ -1,0 +1,153 @@
+.about {
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 6rem;
+    padding: 0 2rem;
+}
+
+.section-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #3498db, #2ecc71);
+        border-radius: 2px;
+    }
+}
+
+h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+}
+
+/* Cards grandes para Misión y Visión */
+.card_myv {
+    flex: 0 0 calc(50% - 2rem);
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.288);
+    }
+}
+
+/* Cards pequeñas para Valores y Principios */
+.card {
+    flex: 0 0 calc(25% - 2rem);
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.11);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.288);
+    }
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    background: #1a743c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.card_myv .icon {
+    width: 90px;
+    height: 90px;
+}
+
+.icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.card_myv .icon i {
+    font-size: 2.5rem;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.card_myv p {
+    font-size: 1.1rem;
+}
+
+/* Colores para las cards */
+.color:nth-child(1) .icon { background: linear-gradient(135deg, #3498db, #2980b9); }
+.color:nth-child(2) .icon { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.color:nth-child(3) .icon { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.color:nth-child(4) .icon { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.color:nth-child(5) .icon { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.color:nth-child(6) .icon { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.color:nth-child(7) .icon { background: linear-gradient(135deg, #34495e, #2c3e50); }
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .card {
+        flex: 0 0 calc(33.333% - 2rem);
+    }
+}
+
+@media (max-width: 900px) {
+    .card {
+        flex: 0 0 calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .card_myv {
+        flex: 0 0 100%;
+    }
+    
+    .card {
+        flex: 0 0 100%;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .about {
+        padding: 0 1rem;
+    }
+}

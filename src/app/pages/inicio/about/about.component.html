@@ -1,0 +1,109 @@
+<!-- home.component.html -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Soluciones Sostenibles en Gestión de Residuos</h1>
+      <p>En <strong>Excedentes Industriales Aprovechables S.A.S.</strong> transformamos los residuos de tu industria en oportunidades, garantizando responsabilidad ambiental, seguridad y protección de tu marca.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" (click)="router.navigate(['/servicios'])">Nuestros Servicios</button>
+        <button class="btn btn-secondary" (click)="router.navigate(['/contacto'])">Contacto Urgente</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Aquí iría una imagen potente: un equipo de trabajo, logística, gestión de residuos, etc. -->
+      <img src="assets/images/hero-image.jpg" alt="Gestión profesional de residuos industriales">
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <h2>¿Por qué elegirnos?</h2>
+    <p>Somos su aliado estratégico en la gestión integral de residuos bajo el concepto <strong>Total Waste Management (TWM)</strong>. Ofrecemos un solo proveedor para múltiples servicios, simplificando sus procesos, ahorrando costos logísticos y garantizando el manejo responsable de sus materiales.</p>
+  </div>
+</section>
+
+<section class="highlights-section">
+  <div class="container">
+    <div class="highlight-card">
+      <div class="highlight-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>Seguridad y Salud en el Trabajo</h3>
+      <p>Priorizamos el bienestar de nuestro equipo y el cumplimiento normativo, controlando los peligros en todas nuestras operaciones.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <h3>Compromiso Ambiental</h3>
+      <p>Diseñamos soluciones y alternativas sostenibles para minimizar el impacto ambiental de la industria.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">
+        <i class="fas fa-certificate"></i>
+      </div>
+      <h3>Protección de Marca</h3>
+      <p>Destrucción certificada de productos fuera de especificación para evitar su comercialización no autorizada.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services-preview-section">
+  <div class="container">
+    <h2>Nuestros Servicios Especializados</h2>
+    <p>Ofrecemos un portafolio completo para darle la solución exacta que su empresa necesita.</p>
+
+    <div class="services-preview-grid">
+      <div class="service-preview-card">
+        <h4>Total Waste Management (TWM)</h4>
+        <p>Gestión integral y licenciada de todos sus residuos con un solo proveedor.</p>
+      </div>
+      <div class="service-preview-card">
+        <h4>Valorización de Excedentes</h4>
+        <p>Convertimos sus residuos en recursos para nutrición animal, compostaje o nuevos procesos industriales.</p>
+      </div>
+      <div class="service-preview-card">
+        <h4>Remediación de Suelos</h4>
+        <p>Expertos en recuperación de sitios contaminados, respaldados por la Ley de Pasivos Ambientales.</p>
+      </div>
+      <!-- Añade tarjetas para los otros servicios: Protección de Marca, Emergencias, Desmontes, Lavado de Tanques -->
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-primary" (click)="router.navigate(['/servicios'])">Ver Todos los Servicios</button>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <!-- Puedes reutilizar el mismo componente de stats que tienes en about -->
+  <div class="container">
+    <h2>EIA SAS en Números</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-value">+20</div>
+        <div class="stat-label">Proyectos de Remedación</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">+10</div>
+        <div class="stat-label">Emergencias Atendidas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Trazabilidad Garantizada</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>¿Listo para transformar la gestión de sus residuos?</h2>
+    <p>Nuestro equipo de expertos está listo para evaluar su caso y ofrecerle la solución más eficiente y sostenible.</p>
+    <div class="cta-buttons">
+      <button class="btn btn-primary" (click)="router.navigate(['/contacto'])">Solicitar una Cotización</button>
+      <button class="btn btn-secondary" (click)="router.navigate(['/nosotros'])">Conocer Más Sobre Nosotros</button>
+    </div>
+  </div>
+</section>
